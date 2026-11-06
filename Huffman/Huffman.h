@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 // Feel free to add anything you need
 
@@ -16,12 +17,19 @@ struct Node
 class Huffman
 {
 public:
+	~Huffman();
+
 	bool GenerateTree(const std::string& inputMessage);
 
-	std::string Encode(const std::string& message) const;
+	std::string Encode(const std::string& message);
 
-	std::string Decode(const std::string& encodedMessage) const;
+	std::string Decode(std::string encodedMessage);
 
 private:
 	Node* RootNode;
+
+	void DestroyAllChildrenNodes(Node* currentNode);
+
+	bool FindCharacterNode(std::string& path, Node* currentNode, char c);
+	char GetFirstFoundCharacter(std::string& path);
 };

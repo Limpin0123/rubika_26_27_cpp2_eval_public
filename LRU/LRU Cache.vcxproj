@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LRUCache.h" />
+    <ClInclude Include="MemoryTrack.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

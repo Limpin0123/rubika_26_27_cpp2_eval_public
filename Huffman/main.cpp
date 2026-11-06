@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-int main()
+void main2()
 {
 	Huffman h;
 
@@ -11,4 +11,14 @@ int main()
 	std::cout << h.Encode("mips") << std::endl; // 100111010
 
 	std::cout << h.Decode("101011") << std::endl; // psi
+
+}
+int main()
+{
+	main2();
+
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+	_CrtDumpMemoryLeaks();
+
+	return 0;
 }

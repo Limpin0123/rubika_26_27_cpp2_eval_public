@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-int main()
+void main2()
 {
     LRUCache cache(2);
 
@@ -20,6 +20,14 @@ int main()
 
     std::cout << cache.get(1) << std::endl; // Vide
     std::cout << cache.get(4) << std::endl; // D
+}
+
+int main()
+{
+    main2();
+
+    _CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+    _CrtDumpMemoryLeaks();
 
     return 0;
 }

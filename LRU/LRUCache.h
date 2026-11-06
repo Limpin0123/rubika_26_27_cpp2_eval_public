@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <unordered_map>
 
 class LRUCache
 {
@@ -20,4 +21,12 @@ public:
 	// If the cache is full, remove the least recently used element.
 	// Inserting or updating an element makes it the most recently used element.
 	void put(int key, std::string value);
+private:
+	int maxCapacity;
+	std::vector<int> sortedKeyByUpdateTime;
+	std::unordered_map<int, int> fastAccess;
+	std::unordered_map<int, std::string> cache;
+
+	void updateElementLastUsage(int key);
+	void removeOldestElement();
 };
